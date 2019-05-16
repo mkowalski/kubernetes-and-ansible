@@ -12,4 +12,11 @@
      regexp: '(.*swap*)'
      replace: '#\1'
 
-  
+  - name: Disable selinux permanently
+    lineinfile:
+      path: /etc/selinux/config
+      regex: "^SELINUX="
+      line: "SELINUX=permissive"
+
+  - name: Disable selinux before reboot
+    shell: setenforce 0
