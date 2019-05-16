@@ -15,7 +15,7 @@
   - name: Disable selinux permanently
     lineinfile:
       path: /etc/selinux/config
-      regex: "^SELINUX="
+      regexp: "^SELINUX="
       line: "SELINUX=permissive"
 
   - name: Disable selinux before reboot
